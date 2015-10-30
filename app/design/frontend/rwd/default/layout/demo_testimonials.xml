@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+
+<layout>
+    <default>
+        <reference name="root">
+            <reference name="top.links">
+                <action method="addLink" translate="label title" module="demo_testimonials"><label>Testimonials</label><url helper="demo_testimonials/getTestimonialsUrl"/><title>Testimonials</title><prepare/><urlParams/><position>100</position></action>
+            </reference>
+        </reference>
+    </default>
+
+   <demo_testimonials_index_index>
+       <reference name="root">
+           <action method="setTemplate">
+               <template>page/2columns-right.phtml</template>
+           </action>
+       </reference>
+        <reference name="content">
+            <block type="demo_testimonials/testimonials" template="demo/testimonials/index.phtml" />
+        </reference>
+    </demo_testimonials_index_index>
+</layout>

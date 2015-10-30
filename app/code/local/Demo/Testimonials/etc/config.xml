@@ -1,0 +1,73 @@
+<?xml version="1.0" ?>
+<config>
+    <modules>
+        <Demo_Testimonials>
+            <version>0.0.1</version>
+        </Demo_Testimonials>
+    </modules>
+
+    <global>
+        <blocks>
+            <demo_testimonials>
+                <class>Demo_Testimonials_Block</class>
+            </demo_testimonials>
+        </blocks>
+        <helpers>
+            <demo_testimonials>
+                <class>Demo_Testimonials_Helper</class>
+            </demo_testimonials>
+        </helpers>
+        <models>
+            <demo_testimonials>
+                <class>Demo_Testimonials_Model</class>
+                <resourceModel>demo_testimonials_resource</resourceModel>
+            </demo_testimonials>
+            <demo_testimonials_resource>
+                <class>Demo_Testimonials_Model_Resource</class>
+                <entities>
+                    <table_demo_testimonials>
+                        <table>demo_testimonials_entities</table>
+                    </table_demo_testimonials>
+                </entities>
+            </demo_testimonials_resource>
+        </models>
+        <resources>
+            <demo_testimonials_setup>
+                <setup>
+                    <module>Demo_Testimonials</module>
+                </setup>
+            </demo_testimonials_setup>
+        </resources>
+    </global>
+
+    <frontend>
+        <routers>
+            <demo_testimonials>
+                <use>standard</use>
+                <args>
+                    <module>Demo_Testimonials</module>
+                    <frontName>demo_testimonials</frontName>
+                </args>
+            </demo_testimonials>
+        </routers>
+        <layout>
+            <updates>
+                <demo_testimonials>
+                    <file>demo_testimonials.xml</file>
+                </demo_testimonials>
+            </updates>
+        </layout>
+    </frontend>
+
+    <admin>
+        <routers>
+            <demo_testimonials_admin>
+                <use>admin</use>
+                <args>
+                    <module>Demo_Testimonials</module>
+                    <frontName>demo_testimonials_admin</frontName>
+                </args>
+            </demo_testimonials_admin>
+        </routers>
+    </admin>
+</config>

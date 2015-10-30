@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+
+<config>
+    <menu>
+        <demo_testimonials translate="title" module="demo_testimonials">
+            <title>Testimonials</title>
+            <sort_order>100</sort_order>
+           <action>demo_testimonials_admin/adminhtml_testimonials/index</action>
+        </demo_testimonials>
+    </menu>
+</config>

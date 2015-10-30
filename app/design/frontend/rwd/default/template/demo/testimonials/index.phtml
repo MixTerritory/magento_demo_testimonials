@@ -1,0 +1,46 @@
+<?php
+/**
+ * @var $testimonials Demo_Testimonials_Model_Resource_Testimonial_Collection
+ */
+$testimonials  = $this->getCollection();
+?>
+<h2><?php echo $this->__('Testimonials:') ?></h2>
+<ul>
+    <?php foreach ($testimonials as $item): ?>
+        <li>
+            <div class="listing-item">
+                <p>
+                    <small>
+                        <strong><?php echo $this->__('Author:') ?></strong> <?php echo $item->getCustomerName(); ?>
+                        <strong><?php echo $this->__('Date:') ?></strong> <?php echo $item->getCreatedAt(); ?>
+                    </small>
+                </p>
+                <p>
+                   </strong> <?php echo Mage::helper('core')->escapeHtml($item->getContent()); ?>
+                </p>
+                <br/>
+                <br/>
+            </div>
+        </li>
+    <?php endforeach; ?>
+</ul>
+<?php echo $this->getPagerHtml(); ?>
+<br/>
+<br/>
+<?php if (Mage::getSingleton('customer/session')->isLoggedIn()): ?>
+    <form action="<?php echo $this->getFormAction(); ?>" id="testimonialForm" method="post">
+        <div class="textarea">
+            <label for="content"><?php echo $this->__('Add new testimonial') ?></label><br />
+            <textarea name="content" id="content" cols="20" rows="3" class="required-entry" style="width: 100%; max-width:100%; marging: 5px 5px; "></textarea>
+        </div>
+        <div class="button-set">
+            <button class="form-button" type="submit"><span><?php echo $this->__('Save') ?></span></button>
+        </div>
+    </form>
+<?php endif ?>
+
+<script type="text/javascript">
+    //< ![CDATA[
+    var reviewForm = new VarienForm('testimonialForm');
+    //]]>
+</script>
